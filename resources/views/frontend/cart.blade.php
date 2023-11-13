@@ -9,7 +9,9 @@
         <tr>
             <th style="width:50%">Product</th>
             <th style="width:10%">Price</th>
-            <th style="width:20%">Quantity</th>
+            <th style="width:5%"></th>
+            <th style="width:10%">Quantity</th>
+            <th style="width:5%"></th>
             <th style="width:10%" class="text-center">Subtotal</th>
             <th style="width:10%"></th>
         </tr>
@@ -28,13 +30,13 @@
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">&#2547; {{ $details['price'] }}</td>
-                    <td data-th="Quantity" class="">
-                        <a class="btn btn-sm increment"><i class="fa-solid fa-plus"></i></a>
+                    <td data-th="Price" class="price" data-price="{{ $details['price'] }}">&#2547; {{ $details['price'] }}</td>
+                    <td><a class="btn btn-sm increment"><i class="fa-solid fa-plus"></i></a></td>
+                    <td data-th="Quantity" class=""> 
                         <input type="number" value="{{ $details['quantity'] }}"  class="form-control quantity update-cart" />
-                        <a class="btn btn-sm decrement"><i class="fa-solid fa-minus"></i></a>
                     </td>
-                    <td data-th="Subtotal" class="text-center">৳ {{ $details['price'] * $details['quantity'] }}</td>
+                    <td> <a class="btn btn-sm decrement"><i class="fa-solid fa-minus"></i></a></td>
+                    <td data-th="Subtotal" class="text-center subtotal">৳ {{ $details['price'] * $details['quantity'] }}</td>
                     <td class="actions" data-th="">
                         <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa-solid fa-trash"></i></button>
                     </td>
@@ -45,7 +47,7 @@
 
     <tfoot>
         <tr>
-            <td colspan="5" class="text-right"><h3><strong>Total : ৳ {{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right"><h3><strong id="cart_total">Total : ৳ {{ $total }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
@@ -86,6 +88,7 @@
         
         var ele=$(this);
        var quantity=ele.parents("tr").find(".quantity").val();
+       var price=parseInt(ele.parents("tr").find(".price").attr("data-price"));
        var increment=parseInt(quantity)+1;
        $.ajax({
             url: '{{ route('update.cart') }}',
@@ -96,8 +99,10 @@
                 quantity:increment
             },
             success: function (response) {
-            ele.parents("tr").find(".quantity").val(increment.toString());
-            cartItems(response);
+              var subtotal=increment*price;
+              ele.parents("tr").find(".quantity").val(increment.toString());       
+              ele.parents("tr").find(".subtotal").text('৳ '+subtotal.toString());     
+              cartItems(response);                    
             }
         });
       
@@ -107,6 +112,7 @@
     $(".decrement").click(function(e){
         
         var ele=$(this);
+        var price=parseInt(ele.parents("tr").find(".price").attr("data-price"));
        var quantity=parseInt(ele.parents("tr").find(".quantity").val());
        if(quantity<=1){
         alert("Quantity should be 1");
@@ -122,11 +128,12 @@
                 quantity:decrement
             },
             success: function (response) {
+                var subtotal=decrement*price;
                 ele.parents("tr").find(".quantity").val(decrement.toString());
+                ele.parents("tr").find(".subtotal").text('৳ '+subtotal.toString());    
                 cartItems(response);
             }
         });
-
        }
       
     });

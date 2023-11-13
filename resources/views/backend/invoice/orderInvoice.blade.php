@@ -84,9 +84,9 @@
                     <tr>
                         <td>{{$item->demand_quantity}}</td>
                         <td>{{$item->product->name}}</td>
-                        <td>${{$item->product->price}}</td>
+                        <td>&#2547;{{$item->product->price}}</td>
                         <td><img src="{{asset('images/'.$item->product->thumbnail)}}" alt="productImage" width="60" height="50"></td>
-                        <td>${{$item->demand_quantity*$item->product->price}}</td>
+                        <td>&#2547;{{$item->demand_quantity*$item->product->price}}</td>
                       </tr>
                     @endforeach
 
@@ -111,15 +111,15 @@
                   <table class="table">
                     <tr>
                       <th style="width:50%">Subtotal:</th>
-                      <td>${{$order->order_amount}}</td>
+                      <td>&#2547;{{$order->order_amount}}</td>
                     </tr>
                     <tr>
                       <th>Shipping:</th>
-                      <td>$0.00</td>
+                      <td>&#2547;0.00</td>
                     </tr>
                     <tr>
                       <th>Total:</th>
-                      <td>${{$order->order_amount}}</td>
+                      <td>&#2547;{{$order->order_amount}}</td>
                     </tr>
                   </table>
                 </div>
@@ -141,7 +141,5 @@
 <script>
     window.addEventListener("load", window.print());
   </script>
-  
-  
   </body>
   </html>

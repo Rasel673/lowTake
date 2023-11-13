@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\{
     HomeController,
     CartController,
     OrderController,
+    ProductController,
 };
 
 
@@ -27,8 +28,11 @@ Route::get('/',[HomeController::class, 'index'] );
 
 
 
-// cart controller----------
+// search product--------------
+Route::post('/products/search', [HomeController::class,'search_product'])->name('home.products.search');
 
+
+// cart controller----------
 Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');

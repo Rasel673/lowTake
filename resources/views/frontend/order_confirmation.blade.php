@@ -21,10 +21,18 @@
                  
 
               <p class="card-text">Shipping Address:
-                    {{-- Name: {{ $delivery_address['full_name'] }}
-                    Phone: {{ $delivery_address['mobile'] }}
-                    Address: {{ $delivery_address['address'] }} 
-                    City: {{ $delivery_address['state'] }},  {{ $delivery_address['zip'] }} --}}
+                <address>
+                  @if ( $new_order->shipping_address)
+                  <strong>Name:{{ $orderAddress['full_name'] !=null?$orderAddress['full_name']:''}}</strong><br>
+                  Phone: {{$orderAddress['mobile']!=null?$orderAddress['mobile']:''}}<br>
+                  Address:{{$orderAddress['address']!=null?$orderAddress['address']:''}}<br>
+                  {{$orderAddress['state']!=null? $orderAddress['state']:''}}({{$orderAddress['zip']!=null?$orderAddress['zip']:''}}),{{$orderAddress['country']!=null?$orderAddress['country']:''}}<br>
+                  Email: {{$orderAddress['email']!=null? $orderAddress['email']:''}}
+                  
+              @else
+                  <p>No shipping address available.</p>
+              @endif
+                </address>
                   </p>
                   <a href="{{url('/')}}" class="btn btn-sm btn-success text-center">Shop More</a>
                 </div>

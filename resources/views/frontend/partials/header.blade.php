@@ -17,8 +17,10 @@
           </div>
           <div class="col-lg-7 col-sm-8  search d-flex align-items-center">
               <form class="mt-3 w-100">
+                @csrf
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <input class="form-control rounded"  type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-control rounded" id="search" type="search" placeholder="Search" aria-label="Search">
+                  <div class="" id="products-list"></div>
                 </form>
           </div>
           <div class="col-lg-3">
@@ -94,5 +96,46 @@ navbar.classList.remove("sticky");
 }
 }
 
+</script>
+
+<script>
+  $(document).ready(function(){
+      $('#search').on('keyup', function(){
+          var query = $(this).val();
+          $.ajax({
+              url:"{{ route('home.products.search') }}",
+              method:'post',
+              data:{'_token':"{{ csrf_token() }}", query:query},
+              success:function(data){
+              $('#products-list').html(data);
+              }
+          });
+      });
+
+
+ 
+
+  $( "#search" ).focusout(function() {
+var inputvalue = $(this).val();
+if((inputvalue!='')){
+  $('#products-list').fadeOut();  
+}else if(inputvalue == ''){
+  $('#products-list').fadeOut();  
+}else{
+
+}
+});
+});
+
+
+  $(document).on('click', '#products-list li', function(){  
+        $('#search').val($(this).text());  
+        $('#products-list').fadeOut();  
+    });
+
+  
+  
+    
+    
 </script>
  @endsection

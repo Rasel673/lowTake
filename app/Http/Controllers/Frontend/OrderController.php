@@ -94,8 +94,8 @@ class OrderController extends Controller
     public function confirm_order($orderId){
 
         $new_order=Order::find(15);
-        $delivery_address=json_decode($new_order->shipping_address);
-        return view('frontend.order_confirmation',compact('new_order','delivery_address'));
+        $orderAddress=json_decode($new_order->shipping_address,true);
+        return view('frontend.order_confirmation',compact('new_order','orderAddress'));
 
     }
 
