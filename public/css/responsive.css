@@ -1,0 +1,432 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 400px) and (min-width: 300px) {
+
+
+  .search form input{
+    padding-left:6%;
+ 
+    
+  
+}
+
+
+/* lower nav */
+.lowernav ul li a {
+  padding: 4px;
+  font-size:9px;
+}
+/* under banner */
+
+.underbanner ol li {
+  font-size: 12px;
+}
+
+
+
+/*  book product card  */
+
+
+
+    .book_img {
+        width: 100%;
+    }
+
+    .book_title{
+        font-size: 6px;
+        }
+        
+        .book p{
+        font-size: 4px;
+        }
+        
+        .book_price{
+            font-size:5px;
+        }
+        
+        .fa-star{
+        font-size: 2px;
+        }
+        
+
+        .addToCart {
+            font-size: 3px;
+            padding: 3px 8px 4px 8px;
+            border-radius: 1px;
+        }
+
+
+
+        .title {
+            font-size: 11px;
+    
+        }
+
+
+/* footer */
+
+
+/* footer site icon image */
+.footerIcon{
+  width: 200px;
+  height: 150;
+}
+
+.playStore{
+  width:60%;  
+}
+.footer_area p{
+  font-size: 10px;
+}
+
+
+.footer_title{
+font-size: 13px !important;
+}
+
+.footer_area ul li a{
+ 
+  font-size: 8px;
+
+}
+
+.Useful_links p{
+  font-size: 8px;
+}
+
+
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  .search form input{
+    padding-left:6%;
+ 
+    
+  
+}
+/* lower nav */
+.lowernav ul li a {
+  padding: 3px;
+  font-size:11px;
+}
+
+
+/* under banner */
+
+.underbanner ol li {
+  font-size: 15px;
+}
+
+
+/*  book product card  */
+
+
+
+    .book_img {
+        width: 100%;
+    }
+
+    .book_title{
+        font-size: 13px;
+        }
+        
+        .book p{
+        font-size: 7px;
+        }
+        
+        .book_price{
+            font-size:12px;
+        }
+        
+        .fa-star{
+        font-size: 6px;
+        }
+        
+
+        .addToCart {
+            font-size: 3px;
+            padding: 3px 8px 4px 8px;
+            border-radius: 2px;
+        }
+
+
+
+        .title {
+            font-size: 16px;
+    
+        }
+
+
+
+
+        
+
+/* footer site icon image */
+.footerIcon{
+    width: 200px;
+    height: 150;
+  }
+  
+  .playStore{
+    width:60%;  
+  }
+  .footer_area p{
+    font-size: 10px;
+  }
+  
+  
+  .footer_title{
+  font-size: 13px !important;
+  }
+  
+  .footer_area ul li a{
+   
+    font-size: 8px;
+  
+  }
+  
+  .Useful_links p{
+    font-size: 8px;
+  }
+  
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) and (min-width: 600px){
+  .search form input{
+    padding-left:5%;
+ 
+ 
+    
+  
+}
+
+/* lower nav */
+.lowernav ul li a {
+  padding: 5px;
+  font-size:15px;
+}
+
+/* under banner */
+
+.underbanner ol li {
+  font-size: 18px;
+}
+
+
+/*  book product card  */
+    .book_img {
+        width: 100%;
+    }
+
+    .book_title{
+        font-size: 16px;
+        }
+        
+        .book p{
+        font-size: 10px;
+        }
+        
+        .book_price{
+            font-size:15px;
+        }
+        
+        .fa-star{
+        font-size: 10px;
+        }
+        
+
+        .addToCart {
+            font-size: 5px;
+            padding: 5px 15px 5px 16px;
+            border-radius: 3px;
+        }
+
+
+
+        .title {
+            font-size: 20px;
+    
+        }
+
+
+        /* footer site icon image */
+.footerIcon{
+    width: 200px;
+    height: 150;
+  }
+  
+  .playStore{
+    width:70%;  
+  }
+  .footer_area p{
+    font-size: 15px;
+  }
+  
+  
+  .footer_title{
+  font-size: 18px !important;
+  }
+  
+  .footer_area ul li a{
+   
+    font-size: 8px;
+  
+  }
+  
+  .Useful_links p{
+    font-size: 8px;
+  }
+  
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px)  and (min-width: 768px) {
+  .search form input{
+    padding-left:5%;
+ 
+ 
+    
+  
+}
+/* lower nav */
+.lowernav ul li a {
+  padding: 6px;
+}
+
+/* under banner */
+
+.underbanner ol li {
+  font-size: 20px;
+}
+
+
+/* book product card */
+    .book_img {
+        width: 100%;
+    }
+
+    .book_title{
+        font-size: 18px;
+        }
+        
+        .book p{
+        font-size: 12px;
+        }
+        
+        .book_price{
+            font-size:19px;
+        }
+        
+        .fa-star{
+        font-size: 12px;
+        }
+        
+
+        .addToCart {
+            font-size: 7px;
+            padding: 5px 15px 6px 15px;
+            border-radius: 4px;
+        }
+
+
+
+        .title {
+            font-size: 22px;
+    
+        }
+
+
+
+           /* footer site icon image */
+.footerIcon{
+    width: 210px;
+    height: 170;
+  }
+  
+  .playStore{
+    width:70%;  
+  }
+  .footer_area p{
+    font-size: 18px;
+  }
+  
+  
+  .footer_title{
+  font-size: 20px !important;
+  }
+  
+  .footer_area ul li a{
+   
+    font-size: 15px;
+  
+  }
+  
+  .Useful_links p{
+    font-size: 12px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px)  and (min-width: 992px) {
+  .search form input{
+    padding-left:5%;
+ 
+    
+  
+}
+
+
+
+/* lower nav */
+  .lowernav ul li a {
+    padding: 10px;
+  }
+
+
+
+
+
+
+  /* book card */
+    .book_img {
+        width: 100%;
+    }
+
+    .book_title{
+        font-size: 20px;
+        }
+        
+        .book p{
+        font-size: 16px;
+        }
+        
+        .book_price{
+            font-size:24px;
+        }
+        
+        .fa-star{
+        font-size: 20px;
+        }
+        
+
+        .addToCart {
+            font-size: 10px;
+            padding: 7px 20px 8px 20px;
+            border-radius: 4px;
+        }
+
+
+        .title {
+            font-size: 26px;
+    
+        }
+}
+
+
+    
+
