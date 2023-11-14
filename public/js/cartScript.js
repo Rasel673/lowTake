@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 
 	// add to cart product-------------------
-
+	// change url before upload---------
 $('.addToCart').click(function(e){
 	e.preventDefault();
 	var base_url='http://127.0.0.1:8000';

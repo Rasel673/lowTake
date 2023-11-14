@@ -18,7 +18,7 @@ use App\Http\Controllers\Backend\{
 
 /*------------------------------------------
 --------------------------------------------
-All Admin Routes List
+ Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:1'])->group(function () {

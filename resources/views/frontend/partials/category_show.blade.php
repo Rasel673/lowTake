@@ -1,6 +1,6 @@
 
 @php
-  $categories=App\Models\Category::with('subcategory')->where('parent_id', null)->orderby('id', 'asc')->limit(7)->get(); 
+  $categories=App\Models\Category::with('subcategory')->where('parent_id', null)->orderby('id', 'asc')->limit(8)->get(); 
 @endphp
 
 @isset($categories)
@@ -27,7 +27,7 @@
                 @isset($subcatgories)
                   <ul class="dropdown-menu bg-dark text-white text-center" aria-labelledby="dropdownMenuLink">
                       @foreach ( $subcatgories as $subcategory)
-                    <li class="dropdown-item tex-center"><a href="#" class="">{{$subcategory->name}}</a></li>
+                    <li class="dropdown-item tex-center"><a href="{{route('category_product',$subcategory->id)}}" class="">{{$subcategory->name}}</a></li>
                     @endforeach
                   </ul>
                  
@@ -37,7 +37,7 @@
              @else
 
               <!-- without subcategoires -->
-             <li class="text-center ms-2"><a href="#home">{{$category->name}}</a></li>
+             <li class="text-center ms-2"><a href="{{route('category_product',$category->id)}}">{{$category->name}}</a></li>
              @endif
     
           @endforeach

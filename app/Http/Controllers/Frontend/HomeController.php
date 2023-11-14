@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -51,6 +52,16 @@ public function search_product(Request $request){
 }
 
 
+
+
+
+public function category_product($cat_id){
+    $category=Category::find($cat_id);
+    $products=Product::where('category_id',$cat_id)
+    ->get();
+    return view('frontend.categorywise_product',compact('products','category'));
+
+}
 
 
 

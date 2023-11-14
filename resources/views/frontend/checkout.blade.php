@@ -4,10 +4,8 @@
 
 
 <div class="container py-4 px-4 min-vh-100">
-
   @if (count((array) session('cart'))>0)
     <div class="row">
-
       <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">Your cart</span>
@@ -216,7 +214,7 @@ $(document).ready(function () {
   });
 
 
-//     event.preventDefault();
+
 
 //   $("form#billing_address").submit(function (event) {
 //     event.preventDefault();
