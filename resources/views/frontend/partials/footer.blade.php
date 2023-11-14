@@ -10,9 +10,12 @@
       <div class="container-fluid footer_area">
         <div class="row pt-3 pb-3">
           <div class="col-4">
-            <img src="@if($setting->footer_Icon!=null)
-            {{asset('images/'.$setting->footer_Icon)}} @endif" class="footerIcon img-fluid" alt="{{asset('images/footer.png')}}">
+            <img src="@isset($setting->footer_Icon)
+            {{asset('images/'.$setting->footer_Icon)}} @endisset" class="footerIcon img-fluid" alt="{{asset('images/footer.png')}}">
+            @isset($setting)
             <p>{{$setting->footer_text}}</p>
+            @endisset
+            
               <div class="services pt-2 d-flex">
                 <img src="{{asset('images/Google Play 1.png')}}" class="playStore img-fluid me-2"  alt="">
                 <img src="{{asset('images/Google Play 2.png')}}"  class="playStore img-fluid" alt="">
@@ -36,6 +39,7 @@
      
           <div class="col-3 text-left Useful_links mt-5 ">
             <p class="footer_title mt-5">Useful Links</p>
+            @isset($setting)
             <ul>
              <li class="mt-2"> <a href="#">Address</a></li> 
              <li><p href="javascript:void(0)">{{$setting->footer_address}}</p></li> 
@@ -60,7 +64,7 @@
              
             </ul>
           </div>
-    
+          @endisset
     
         </div>
     

@@ -8,7 +8,8 @@ use App\Http\Controllers\Backend\{
     CategoryController,
     SliderController,
     ProductController,
-    SaleController
+    SaleController,
+    CouponController
 
 };
 
@@ -67,8 +68,11 @@ Route::group(['prefix'=>'admin'],function(){
   
   
   
-
-
+    // cupon setup-----------
+    Route::get('coupons',[CouponController::class,'allCoupons'])->name('admin.coupons');
+    Route::any('coupon/add',[CouponController::class,'storeCoupon'])->name('admin.storeCoupon');
+    Route::any('coupon/edit/{coupon_id}',[CouponController::class,'updateCoupon'])->name('admin.updateCoupon');
+    Route::get('coupon/delete/{id}', [CouponController::class, 'deleteCuopon'])->name('deleteCuopon');  
 
 
 

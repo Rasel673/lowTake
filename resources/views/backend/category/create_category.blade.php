@@ -11,7 +11,7 @@
                     <h3 class="box-title">Create Category</h3>
                     @include('backend.partials.msg')
                 </div>
-                <form role="form" method="post">
+                <form role="form" method="post" action="{{route('createCategory')}}" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="box-body">
                         <div class="row">

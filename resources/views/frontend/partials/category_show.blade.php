@@ -1,14 +1,19 @@
 
 @php
-  $categories=App\Models\Category::with('subcategory')->where('parent_id', null)->orderby('id', 'asc')->limit(8)->get(); 
+  $categories=App\Models\Category::with('subcategory')->where('parent_id', null)->orderby('id', 'asc')->limit(7)->get(); 
 @endphp
 
 @isset($categories)
 <section class="lower_navbar">
     <div class="container-fluid">
         <div class="row lowernav  me-2">
-        <ul class="d-flex justify-content-between">
-            {{-- with subcategoires --}}
+        <ul class=" @if (count($categories)>=7)
+          d-flex justify-content-between
+        @endif">
+          <li class="text-center">
+            <a href="{{url('/')}}" class="">হোম</a>
+          </li>
+           <!--with subcategoires -->  
             @foreach ( $categories as $category)
             @php
             $subcatgories=$category->subcategory;
@@ -31,7 +36,7 @@
               </li>
              @else
 
-              {{-- without subcategoires --}}
+              <!-- without subcategoires -->
              <li class="text-center ms-2"><a href="#home">{{$category->name}}</a></li>
              @endif
     

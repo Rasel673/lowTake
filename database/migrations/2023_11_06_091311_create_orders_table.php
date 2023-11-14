@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('order_quantity')->default(0);
             $table->string('order_date');
             $table->longText('shipping_address')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

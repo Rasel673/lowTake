@@ -42,22 +42,10 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>Select  Discount</label>
-                                    <select type="text" name="discount_id" class="form-control">
-                                        <option value="">None</option>
-                                        @if($categories)
-                                            @foreach($categories as $category)
-                                                <?php $dash=''; ?>
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                                @if(count($category->subcategory))
-                                                    @include('backend.category.subCategoryList-option',['subcategories' => $category->subcategory])
-                                                @endif
-                                            @endforeach
-                                        @endif
-                                    </select>
+                                    <input type="text" name="discount" placeholder="discount amount" class="form-control" />
+                                     
                                 </div>
                             </div>
-
-
 
                             <div class="col-sm-6">
                                 <div class="form-group">

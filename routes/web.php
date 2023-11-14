@@ -44,6 +44,10 @@ Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remo
 Route::any('checkout', [OrderController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::get('/order/confirm/{id}',[OrderController::class, 'confirm_order'] )->name('confirm_order');
 
+// cupon apply---------------
+Route::post('/cupon_apply',[OrderController::class, 'cupponApply'])->name('cupponApply');
+
+
 
 
 Route::get('/clear', function()

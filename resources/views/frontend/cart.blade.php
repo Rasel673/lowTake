@@ -47,7 +47,7 @@
 
     <tfoot>
         <tr>
-            <td colspan="5" class="text-right"><h3><strong id="cart_total">Total : ৳ {{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right"><h3><strong id="cart_total" data-total="{{ $total }}">Total : ৳ {{ $total }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
@@ -89,6 +89,7 @@
         var ele=$(this);
        var quantity=ele.parents("tr").find(".quantity").val();
        var price=parseInt(ele.parents("tr").find(".price").attr("data-price"));
+       var cartTotalPrice=parseInt($("#cart_total").attr("data-total"));
        var increment=parseInt(quantity)+1;
        $.ajax({
             url: '{{ route('update.cart') }}',
@@ -100,8 +101,13 @@
             },
             success: function (response) {
               var subtotal=increment*price;
+              cartTotalPrice=cartTotalPrice+price;
               ele.parents("tr").find(".quantity").val(increment.toString());       
-              ele.parents("tr").find(".subtotal").text('৳ '+subtotal.toString());     
+              ele.parents("tr").find(".subtotal").text('৳ '+subtotal.toString());
+              $("#cart_total").text('Total : ৳ '+cartTotalPrice.toString());    
+              $("#cart_total").attr("data-total",cartTotalPrice);
+              $('.total-section p span').html('৳' + cartTotalPrice);
+	            $('#cart_price').attr('data-price', cartTotalPrice);       
               cartItems(response);                    
             }
         });
@@ -114,6 +120,7 @@
         var ele=$(this);
         var price=parseInt(ele.parents("tr").find(".price").attr("data-price"));
        var quantity=parseInt(ele.parents("tr").find(".quantity").val());
+       var cartTotalPrice=parseInt($("#cart_total").attr("data-total"));
        if(quantity<=1){
         alert("Quantity should be 1");
        }else{
@@ -129,8 +136,13 @@
             },
             success: function (response) {
                 var subtotal=decrement*price;
+                cartTotalPrice=cartTotalPrice-price;
                 ele.parents("tr").find(".quantity").val(decrement.toString());
-                ele.parents("tr").find(".subtotal").text('৳ '+subtotal.toString());    
+                ele.parents("tr").find(".subtotal").text('৳ '+subtotal.toString());
+                $("#cart_total").text('Total : ৳ '+cartTotalPrice.toString());    
+                $("#cart_total").attr("data-total",cartTotalPrice);
+                $('.total-section p span').html('৳' + cartTotalPrice);
+	            $('#cart_price').attr('data-price', cartTotalPrice);        
                 cartItems(response);
             }
         });

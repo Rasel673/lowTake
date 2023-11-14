@@ -2,11 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center text-dark my-5">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
+                <div class="card-header text-center"><img class="headerIcon img-fluid mx-auto d-block" src="{{asset('images/headerIcon.png')}}"   alt="{{asset('images/headerIcon.png')}}"></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -53,7 +52,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Login') }}
                                 </button>
 
@@ -62,6 +61,11 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                   Register Here
+                                </a>
+                            
                             </div>
                         </div>
                     </form>

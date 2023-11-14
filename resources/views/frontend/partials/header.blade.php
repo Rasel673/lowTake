@@ -12,8 +12,8 @@
         <div class="row">
           <div class="col-lg-2 col-sm-4 d-flex align-items-center">
             <a href="JavaScript:void(0)" id="sidebar_show" class="mt-3"><img class="icon img-fluid" src="icons/bar.svg" alt=""></a>
-              <a class="mx-auto d-block" href="{{url('/')}}"><img class="headerIcon img-fluid mx-auto d-block" src="@if($setting->header_Icon!=null)
-                {{asset('images/'.$setting->header_Icon)}} @endif"   alt=" {{asset('images/headerIcon.png')}}"></a>
+              <a class="mx-auto d-block" href="{{url('/')}}"><img class="headerIcon img-fluid mx-auto d-block" src="@isset($setting->header_Icon)
+                {{asset('images/'.$setting->header_Icon)}} @endisset"   alt="{{asset('images/headerIcon.png')}}"></a>
           </div>
           <div class="col-lg-7 col-sm-8  search d-flex align-items-center">
               <form class="mt-3 w-100">

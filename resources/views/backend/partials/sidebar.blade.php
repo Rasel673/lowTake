@@ -146,6 +146,13 @@
     </li>
 
     <li class="nav-item">
+      <a href="{{route('admin.coupons')}}" class="nav-link  {{ Request::routeIs('admin.coupons') ? 'active' : '' }}">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Cupons</p>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a href="{{route('page_settings')}}" class="nav-link {{ Request::routeIs('page_settings') ? 'active' : '' }}">
         <i class="far fa-circle nav-icon"></i>
         <p>Pages</p>

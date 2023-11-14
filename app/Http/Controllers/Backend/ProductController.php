@@ -48,7 +48,7 @@ class ProductController extends Controller
 
             Product::create([
                 'category_id'=>$request->category_id,
-                'discount_id'=>$request->discount_id,
+                'discount'=>$request->discount,
                 'name' => $request->name,
                 'slug' =>str_replace(" ","_",$request->name),
                 'sku' => $request->sku,
@@ -117,7 +117,7 @@ class ProductController extends Controller
 
 
             $product->category_id = $request->category_id;
-            $product->discount_id = $request->discount_id;
+            $product->discount = $request->discount;
             $product->name = $request->name;
             $product->slug = $request->slug;
             $product->sku = $request->sku;
