@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Setting;
 use App\Models\Category;
+use App\Models\HomePage;
 
 class AdminController extends Controller
 {
@@ -119,16 +120,155 @@ class AdminController extends Controller
 
 public function page_settings(Request $request){
 
+
+    $setting=HomePage::first();
+
     if($request->method()=='GET')
     {
-        $setting=Setting::first();
+        
 
      $categories = Category::where('deleted_at',null)
      ->orderby('name', 'asc')->get();
-        return view('backend.settings.home_page',compact('categories'));
+        return view('backend.settings.home_page',compact('categories','setting'));
     }
   
 
+    if($request->method()=='POST'){
+
+     
+
+          if ($request->hasFile('banner_1')) {
+            $request->validate([
+                'banner_1' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            ]);
+        if($request->banner_1 != ''){        
+            $path = public_path().'/images/';
+  
+            //code for remove old file
+            if($setting->banner_1 != ''  && $setting->banner_1 != null){
+                 $file_old = $path.$setting->banner_1;
+                 unlink($file_old);
+            }
+  
+            //upload new file
+            $imageName = time().'banner_1'.'.'.$request->header_Icon->extension();  
+            $request->banner_1->move(public_path('images'), $imageName);
+            $setting->banner_1 =$imageName;
+  
+            }
+
+        }
+
+
+
+        if ($request->hasFile('banner_2')) {
+            $request->validate([
+                'banner_2' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            ]);
+        if($request->banner_2 != ''){        
+            $path = public_path().'/images/';
+  
+            //code for remove old file
+            if($setting->banner_2 != ''  && $setting->banner_2 != null){
+                 $file_old = $path.$setting->banner_2;
+                 unlink($file_old);
+            }
+  
+            //upload new file
+            $imageName = time().'banner_2'.'.'.$request->header_Icon->extension();  
+            $request->banner_2->move(public_path('images'), $imageName);
+            $setting->banner_2 =$imageName;
+  
+            }
+
+        }
+
+        if ($request->hasFile('banner_3')) {
+            $request->validate([
+                'banner_3' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            ]);
+        if($request->banner_3 != ''){        
+            $path = public_path().'/images/';
+  
+            //code for remove old file
+            if($setting->banner_3 != ''  && $setting->banner_3 != null){
+                 $file_old = $path.$setting->banner_3;
+                 unlink($file_old);
+            }
+  
+            //upload new file
+            $imageName = time().'banner_3'.'.'.$request->header_Icon->extension();  
+            $request->banner_3->move(public_path('images'), $imageName);
+            $setting->banner_3 =$imageName;
+  
+            }
+
+        }
+
+        if ($request->hasFile('banner_4')) {
+            $request->validate([
+                'banner_4' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            ]);
+        if($request->banner_4 != ''){        
+            $path = public_path().'/images/';
+  
+            //code for remove old file
+            if($setting->banner_4 != ''  && $setting->banner_4 != null){
+                 $file_old = $path.$setting->banner_1;
+                 unlink($file_old);
+            }
+  
+            //upload new file
+            $imageName = time().'banner_4'.'.'.$request->header_Icon->extension();  
+            $request->banner_4->move(public_path('images'), $imageName);
+            $setting->banner_4 =$imageName;
+  
+            }
+
+        }
+
+
+        if ($request->hasFile('banner_5')) {
+            $request->validate([
+                'banner_5' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            ]);
+        if($request->banner_5 != ''){        
+            $path = public_path().'/images/';
+  
+            //code for remove old file
+            if($setting->banner_5 != ''  && $setting->banner_5 != null){
+                 $file_old = $path.$setting->banner_5;
+                 unlink($file_old);
+            }
+  
+            //upload new file
+            $imageName = time().'banner_1'.'.'.$request->header_Icon->extension();  
+            $request->banner_5->move(public_path('images'), $imageName);
+            $setting->banner_5 =$imageName;
+  
+            }
+
+        }
+
+
+
+        $setting->selected_category=$request->selected_category;
+
+        $setting->update();
+
+
+        return redirect()->back()->with('success', 'Home Page has been updated successfully.');
+        
+
+    }
+          
+
+      
 }
 
 

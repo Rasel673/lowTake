@@ -17,7 +17,7 @@
             @csrf
             
             <div class="row">
-                <input type="hidden" name="page_name"   value="home_page}">
+                <input type="hidden" name="page_name"   value="home_page">
     
                 <div class="col-md-12">
                     <strong>Banner Section First</strong>
@@ -32,7 +32,7 @@
                         @enderror
                     </div>
 
-                    <img id="preview-banner_1-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_1 !=null ? $setting->banner_1:'')}}"
+                    <img id="preview-banner_1-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_1)}}"
                     alt="preview banner_1" style="max-height:100px;">
                 </div>
                
@@ -44,7 +44,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-banner_2-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_2 !=null ? $setting->banner_2:'')}}"
+                    <img id="preview-banner_2-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_2)}}"
                     alt="preview banner_2" style="max-height:100px;">
                 </div>
 
@@ -63,7 +63,7 @@
                         @enderror
                     </div>
 
-                    <img id="preview-banner_3-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_3 !=null ? $setting->banner_3:'')}}"
+                    <img id="preview-banner_3-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_3)}}"
                     alt="preview banner_3" style="max-height:100px;">
                 </div>
                
@@ -75,12 +75,12 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-banner_4-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_4 !=null ? $setting->banner_4:'')}}"
+                    <img id="preview-banner_4-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_4)}}"
                     alt="preview banner_4" style="max-height:100px;">
                 </div>
 
 
-                <div class="col-md-6 align-items-center d-flex">
+                <div class="col-md-6 align-items-center d-flex mt-2">
                     <div class="form-group">
                         <label for="banner_5" class="form-label">Banner Image 5</label>
                         <input type="file" name="footer_Icon" placeholder="Choose image" id="banner_5" value="{{$setting->banner_5 !=null ? $setting->banner_5:''}}">
@@ -88,21 +88,27 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-banner_4-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_5 !=null ? $setting->banner_5:'')}}"
-                    alt="preview banner_4" style="max-height:100px;">
+                    <img id="preview-banner_5-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_5)}}"
+                    alt="preview banner_5" style="max-height:100px;">
                 </div>
 
 
                 <div class="col-md-6">
                     <div class="form-group">
                       <label>Select Category of Products</label>
-                      <select class="select2" multiple="multiple" data-placeholder="Select a Category" style="width: 100%;">
+                      <select class="select2" name="selected_category[]" multiple="multiple" data-placeholder="Select a Category" style="width: 100%;">
                         <option value="">None</option>
                         @if($categories)
                          @foreach($categories as $item)
-                                               
-                        <option value="{{$item->id}}" @if($setting->category->id == $item->id ) selected @endif> @if($item->parent_id!=null)--@endif{{$item->name}}</option>
-                                              
+                            @if ($setting->selected_category!=null)
+                           @php
+                            $stringArray =json_decode($setting->selected_category,true);
+                            $intArray = array_map('intval', $stringArray);
+                           @endphp
+                            <option value="{{$item->id}}" @if(in_array($item->id,$intArray, true))  selected @endif> @if($item->parent_id!=null)--@endif{{$item->name}}</option> 
+                            @else
+                            <option value="{{$item->id}}"> @if($item->parent_id!=null)--@endif{{$item->name}}</option> 
+                            @endif                
                         @endforeach
                          @endif
                       </select>
@@ -110,7 +116,7 @@
                     <!-- /.form-group -->
                   </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mt-3">
                     <button type="submit" class="btn btn-primary float-right" id="submit">Submit</button>
                 </div>
             </div>     

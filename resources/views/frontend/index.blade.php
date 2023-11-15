@@ -7,7 +7,8 @@
     
 
 @php
-  $products=App\Models\Product::with('category')->get(); 
+  $products=App\Models\Product::with('category')->get();
+  $HomePage=App\Models\HomePage::first(); 
 @endphp
 
 
@@ -51,8 +52,21 @@
     <section class="banner_1">
         <div class="container-fluid">
             <div class="row justify-content-evenly">
-                <div class="col-6"><img src="{{asset('images/banner_1.png')}}" class="img-fluid rounded" alt=""></div>
-                <div class="col-6"><img src="{{asset('images/banner_1.png')}}" class="img-fluid rounded" alt=""></div>
+                <div class="col-6">
+                  @if ($HomePage->banner_1!=null)
+                  <img src="{{asset('images/'.$HomePage->banner_1)}}" class="img-fluid rounded" alt="">
+                  @else
+                  <img src="{{asset('images/banner_1.png')}}" class="img-fluid rounded" alt="">
+                  @endif
+                  
+                </div>
+                <div class="col-6">
+                  @if ($HomePage->banner_2!=null)
+                  <img src="{{asset('images/'.$HomePage->banner_2)}}" class="img-fluid rounded" alt="">
+                  @else
+                  <img src="{{asset('images/banner_1.png')}}" class="img-fluid rounded" alt="">
+                  @endif
+                </div>
                 
             </div>
         </div>
@@ -151,9 +165,31 @@
     <section class="banner_1">
       <div class="container-fluid">
           <div class="row justify-content-evenly">
-              <div class="col-4"><img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt=""></div>
-              <div class="col-4"><img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt=""></div>
-              <div class="col-4"><img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt=""></div>
+              <div class="col-4">
+                @if ($HomePage->banner_3!=null)
+                <img src="{{asset('images/'.$HomePage->banner_3)}}" class="img-fluid rounded" alt="">
+                @else
+                <img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt="">
+                @endif
+
+              
+              </div>
+              <div class="col-4">
+                @if ($HomePage->banner_4!=null)
+                <img src="{{asset('images/'.$HomePage->banner_4)}}" class="img-fluid rounded" alt="">
+                @else
+                <img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt="">
+                @endif
+              </div>
+
+              <div class="col-4">
+                @if ($HomePage->banner_5!=null)
+                <img src="{{asset('images/'.$HomePage->banner_5)}}" class="img-fluid rounded" alt="">
+                @else
+                <img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt="">
+                @endif
+               
+              </div>
               
           </div>
       </div>
