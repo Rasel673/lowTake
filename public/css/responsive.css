@@ -23,37 +23,6 @@
 
 
 
-/*  book product card  */
-
-
-
-    .book_img {
-        width: 100%;
-    }
-
-    .book_title{
-        font-size: 6px;
-        }
-        
-        .book p{
-        font-size: 4px;
-        }
-        
-        .book_price{
-            font-size:5px;
-        }
-        
-        .fa-star{
-        font-size: 2px;
-        }
-        
-
-        .addToCart {
-            font-size: 3px;
-            padding: 3px 8px 4px 8px;
-            border-radius: 1px;
-        }
-
 
 
         .title {
@@ -63,7 +32,6 @@
 
 
 /* footer */
-
 
 /* footer site icon image */
 .footerIcon{
@@ -119,37 +87,6 @@ font-size: 13px !important;
   font-size: 15px;
 }
 
-
-/*  book product card  */
-
-
-
-    .book_img {
-        width: 100%;
-    }
-
-    .book_title{
-        font-size: 13px;
-        }
-        
-        .book p{
-        font-size: 7px;
-        }
-        
-        .book_price{
-            font-size:12px;
-        }
-        
-        .fa-star{
-        font-size: 6px;
-        }
-        
-
-        .addToCart {
-            font-size: 3px;
-            padding: 3px 8px 4px 8px;
-            border-radius: 2px;
-        }
 
 
 
@@ -217,34 +154,6 @@ font-size: 13px !important;
 }
 
 
-/*  book product card  */
-    .book_img {
-        width: 100%;
-    }
-
-    .book_title{
-        font-size: 16px;
-        }
-        
-        .book p{
-        font-size: 10px;
-        }
-        
-        .book_price{
-            font-size:15px;
-        }
-        
-        .fa-star{
-        font-size: 10px;
-        }
-        
-
-        .addToCart {
-            font-size: 5px;
-            padding: 5px 15px 5px 16px;
-            border-radius: 3px;
-        }
-
 
 
         .title {
@@ -305,33 +214,6 @@ font-size: 13px !important;
 }
 
 
-/* book product card */
-    .book_img {
-        width: 100%;
-    }
-
-    .book_title{
-        font-size: 18px;
-        }
-        
-        .book p{
-        font-size: 12px;
-        }
-        
-        .book_price{
-            font-size:19px;
-        }
-        
-        .fa-star{
-        font-size: 12px;
-        }
-        
-
-        .addToCart {
-            font-size: 7px;
-            padding: 5px 15px 6px 15px;
-            border-radius: 4px;
-        }
 
 
 
@@ -387,38 +269,6 @@ font-size: 13px !important;
     padding: 10px;
   }
 
-
-
-
-
-
-  /* book card */
-    .book_img {
-        width: 100%;
-    }
-
-    .book_title{
-        font-size: 20px;
-        }
-        
-        .book p{
-        font-size: 16px;
-        }
-        
-        .book_price{
-            font-size:24px;
-        }
-        
-        .fa-star{
-        font-size: 20px;
-        }
-        
-
-        .addToCart {
-            font-size: 10px;
-            padding: 7px 20px 8px 20px;
-            border-radius: 4px;
-        }
 
 
         .title {

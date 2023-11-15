@@ -1,4 +1,4 @@
-        <!-- side bar -->
+        <!-- side bar 
         <div class="sidebar">
             <div class="col-lg-3 col-sm-2 col-xs-1">
          <div class="bg-white rounded  shadow-lg" id="category-sidebar">
@@ -43,3 +43,5 @@
                </div>
                  </div>
                  </div>
+
+                 -->

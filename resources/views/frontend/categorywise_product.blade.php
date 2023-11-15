@@ -12,11 +12,9 @@
   <h3 class="title">{{$category->name}}</h3>  
  </div>
 
- <div class="row @if (count($products)>=5)
-  justify-content-between
-   @endif pb-5">
+ <div class="row pb-5">
     @foreach ($products as $product)
-    <div class="col-2 p-2">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
       <div class="book_card">
       <div class="book  product text-center pt-4 pb-4">
        <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   

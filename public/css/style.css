@@ -249,7 +249,7 @@ display: none;
 /* banner slider */
 
 .item{
-height: 293px;
+height:10%;
 color: #000;
 z-index:1;
 }

@@ -19,14 +19,12 @@
   <h3 class="title">নতুন প্রকাশিত বই</h3>  
  </div>
 
- <div class="row @if (count($products)>=5)
-  justify-content-between
-   @endif pb-5">
+ <div class="row pb-5">
     @foreach ($products as $product)
-    <div class="col-2 p-2">
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
       <div class="book_card">
       <div class="book  product text-center pt-4 pb-4">
-       <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
+       <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block img-contain"  alt="">   
       <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
       <p class="mb-0">{{$product->short_desc}}</p>
       <div class="d-flex-inline star">
@@ -49,8 +47,6 @@
 </div>
 </section>
     
-
-
     <!-- banner area -->
     <section class="banner_1">
         <div class="container-fluid">
@@ -74,11 +70,9 @@
       <div class="col-6 text-right"><a href="" class="title float-end">সবগুলো দেখুন</a></div>
         </div>
 
-  <div class="row @if (count($products)>=5)
-    justify-content-between
-     @endif pb-5">
+  <div class="row  pb-5">
       @foreach ($products as $product)
-      <div class="col-2 p-2">
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
         <div class="book_card">
         <div class="book  product text-center pt-4 pb-4">
           <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">    
@@ -120,11 +114,9 @@
            <div class="col-6 text-right"><a href="" class="title float-end">সবগুলো দেখুন</a></div>
              </div>
      
-       <div class="row @if (count($products)>=5)
-         justify-content-between
-          @endif pb-5">
+       <div class="row  pb-5">
            @foreach ($products as $product)
-           <div class="col-2 p-2">
+           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
              <div class="book_card">
              <div class="book  product text-center pt-4 pb-4">
               <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
@@ -180,11 +172,9 @@
          <div class="col-6 text-right"><a href="" class="title float-end">সবগুলো দেখুন</a></div>
            </div>
    
-     <div class="row @if (count($products)>=5)
-       justify-content-between
-        @endif pb-5">
+     <div class="row  pb-5">
          @foreach ($products as $product)
-         <div class="col-2 p-2">
+         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
            <div class="book_card">
            <div class="book  product text-center pt-4 pb-4">
             <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
@@ -225,11 +215,9 @@
               <div class="col-6 text-right"><a href="" class="title float-end">সবগুলো দেখুন</a></div>
                 </div>
         
-          <div class="row @if (count($products)>=5)
-            justify-content-between
-             @endif pb-5">
+          <div class="row  pb-5">
               @foreach ($products as $product)
-              <div class="col-2 p-2">
+              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
                 <div class="book_card">
                 <div class="book  product text-center pt-4 pb-4">
                   <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   

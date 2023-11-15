@@ -37,19 +37,12 @@
                             </div>
 
 
+                           
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Select  Discount</label>
-                                    <select type="text" name="discount_id" class="form-control">
-                                        <option value="">None</option>
-                                        {{-- @if($categories)
-                                            @foreach($categories as $item)
-                                               
-                                                <option value="{{$item->id}}" @if($product->category->id == $item->id ) selected @endif> @if($item->parent_id!=null)--@endif{{$item->name}}</option>
-                         
-                                            @endforeach
-                                        @endif --}}
-                                    </select>
+                                    <label>Discount</label>
+                                    <input type="text" name="discount" placeholder="discount amount" class="form-control" value="{{$product->discount}}" />
+                                     
                                 </div>
                             </div>
 

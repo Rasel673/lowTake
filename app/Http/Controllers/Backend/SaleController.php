@@ -61,4 +61,42 @@ public function orderInvoice($orderId){
 }
 
 
+public function chang_status($type,$orderId){
+
+$order=Order::find($orderId);
+if($type=='payment_status'){
+$order->payment_status='paid';
+$order->update();
+}
+
+if($type=='delivery_status'){
+    $order->delivery_status='delivered';
+    $order->update();
+}
+
+
+if($type=='cencel'){
+
+    $orderItems=OrderDetails::with('product')->where('order_id',$order->id)->get();
+    foreach($orderItems as $orderItem){
+      // increment product quantity---------
+        $product=Product::find($orderItem->product->id);
+        $quantity= $product->quantity+$orderItem->demand_quantity;
+        $product->update(['quantity' => $quantity]);
+        //delete items-------
+        $orderItem->delete();
+      }
+
+    //delete order-------
+    $order->delete();
+     return redirect()->back()->with('success','Order has been deleted successfully.');
+}
+
+
+return redirect()->back()->with('success', $type.'has been updated successfully.');
+
+}
+
+
+
 }

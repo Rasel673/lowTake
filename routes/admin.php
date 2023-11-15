@@ -65,7 +65,9 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('sales/search/', [SaleController::class, 'search'])->name('Sale.search');
     Route::get('sales/order_details/{id}',[SaleController::class,'orderDetails'])->name('orderDetails');
     Route::get('sales/order_Invoice/{id}',[SaleController::class,'orderInvoice'])->name('orderInvoice');
-  
+    
+    //change status-------------
+    Route::get('change_status/{type}/{id}', [SaleController::class, 'chang_status'])->name('chang_status');
   
   
     // cupon setup-----------

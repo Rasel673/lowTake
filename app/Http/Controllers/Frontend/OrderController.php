@@ -147,5 +147,14 @@ class OrderController extends Controller
     }
 
 
+    public function orderDetails($orderId){
+        $orderItems=OrderDetails::with('product')->where('order_id',$orderId)->get();
+        $order=Order::find($orderId);
+        $orderAddress=json_decode($order->shipping_address,true);
+        return view('frontend.user_order_details',compact('orderItems','order','orderAddress'));
+    
+    }
+
+
 
 }

@@ -127,11 +127,7 @@ public function page_settings(Request $request){
      ->orderby('name', 'asc')->get();
         return view('backend.settings.home_page',compact('categories'));
     }
- 
-
-
-
-    
+  
 
 }
 

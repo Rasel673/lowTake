@@ -8,6 +8,8 @@
     <div class="row">
       <h3 class="col-md-12">Orders List</h3>
     </div>
+
+    @include('backend.partials.msg')
     <!-- Main row -->
     <div class="row">
       <div class="col-md-12">
@@ -64,8 +66,13 @@
                     <td>
                       <a href="{{route('orderDetails',$order->id)}}" class="btn btn-primary">view</a>
                       <a href="#" class="btn btn-warning">Edit</a>
-                      <a href="#" class="btn btn-info">Accept</a>
-                      <a href="#" class="btn btn-danger">Cancel</a>
+                      @if ($order->payment_status=='due')
+                      <a href="{{ route('chang_status', ['type' => 'payment_status', 'id' =>$order->id]) }}" class="btn btn-info">Paid</a>
+                      @endif
+                      @if ($order->delivery_status=='pending')
+                      <a href="{{ route('chang_status', ['type' => 'delivery_status', 'id' =>$order->id]) }}" class="btn btn-success">Delivered</a>
+                      @endif
+                      <a href="{{ route('chang_status', ['type' => 'cencel', 'id' =>$order->id]) }}" onclick="alert('are you sure?')" class="btn btn-danger">Cancel</a>
                     </td>
                   </tr>
                   @endforeach
@@ -94,3 +101,4 @@
 
 
 @endsection
+

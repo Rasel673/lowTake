@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -16,7 +18,7 @@ public function index(){
 
 
 public function home(){
-    return view('home');
+    return view('frontend.user_home');
 }
 
 
@@ -30,8 +32,6 @@ public function search_product(Request $request){
         $products = Product::select("name as value", "id")
         ->where('name', 'like', '%' . $query . '%')->get();
 
-
-     
 
         if ($products) {
             $output = '<ul class="dropdown-menu ps-3" style="display:block; z-index:500; position:relative">';
@@ -63,6 +63,39 @@ public function category_product($cat_id){
 
 }
 
+
+// reset user profile----------
+public function reset_profile(Request $request,$id){
+
+    $user=User::find($id);
+    if($request->method()=='GET')
+    {
+       
+        return view('frontend.change_user_profile',compact('user'));
+    }
+
+    if($request->method()=='POST')
+    {
+       
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+          ]);
+
+
+          if($request->password!=null || $request->password!=''){
+            $user->password=Hash::make($request->password);
+          }
+
+          $user->name=$request->name;
+          $user->email=$request->email;
+          $user->update();
+          return redirect()->back()->with('success','Profile has been updated successfully!');
+
+        }
+
+
+}
 
 
 }

@@ -42,12 +42,35 @@ Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
 
-  // order check out route--------------
-Route::any('checkout', [OrderController::class, 'checkout'])->name('checkout')->middleware('auth');
+
+
+
+
+
+
+// authenicated user route here--------------------
+
+Route::middleware(['auth', 'user-access:0'])->group(function () {
+
+// order check out route--------------
+Route::any('checkout', [OrderController::class, 'checkout'])->name('checkout');
 Route::get('/order/confirm/{id}',[OrderController::class, 'confirm_order'] )->name('confirm_order');
 
 // cupon apply---------------
 Route::post('/cupon_apply',[OrderController::class, 'cupponApply'])->name('cupponApply');
+
+
+// see user order details------
+Route::get('order/order_details/{id}',[OrderController::class,'orderDetails'])->name('user.orderDetails');
+
+// user profile change route--------
+Route::any('reset_profile/{id}', [HomeController::class, 'reset_profile'])->name('reset_user');
+
+
+});
+
+
+
 
 
 
