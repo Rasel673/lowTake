@@ -3,7 +3,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{url('/')}}" class="brand-link" target="_blank">
-      <img src="{{asset('images/headerIcon.png')}}" alt="company Logo" class="brand-image img-circle elevation-5" style="opacity: .8">
+      <img src="{{asset('public/images/headerIcon.png')}}" alt="company Logo" class="brand-image img-circle elevation-5" style="opacity: .8">
       <span class="brand-text font-weight-light">LowTake</span>
     </a>
 

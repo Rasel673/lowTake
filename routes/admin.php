@@ -9,7 +9,8 @@ use App\Http\Controllers\Backend\{
     SliderController,
     ProductController,
     SaleController,
-    CouponController
+    CouponController,
+    ReportController
 
 };
 
@@ -76,6 +77,9 @@ Route::group(['prefix'=>'admin'],function(){
     Route::any('coupon/edit/{coupon_id}',[CouponController::class,'updateCoupon'])->name('admin.updateCoupon');
     Route::get('coupon/delete/{id}', [CouponController::class, 'deleteCuopon'])->name('deleteCuopon');  
 
+
+   // Report  route-----------------
+   Route::get('report',[ReportController::class,'report'])->name('admin.report');
 
 
     // website setup route-------=============================---------

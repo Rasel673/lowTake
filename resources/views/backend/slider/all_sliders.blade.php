@@ -33,7 +33,7 @@
                     
                                 <td>{{$_SESSION['i']}}</td>
                                 <td>{{$slider->link}}</td>
-                                 <td><img src="{{asset('images/'.$slider->slider_image)}}" alt="" width="100" height="100"></td>
+                                 <td><img src="{{asset('public/images/'.$slider->slider_image)}}" alt="" width="100" height="100"></td>
                               
                                 </td>
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->string('thumbnail');
             $table->string('sku')->nullable();
+            $table->integer('rating')->default(4);
             $table->double('price')->default(0.00);
             $table->integer('quantity')->default(0);
             $table->string('short_desc');

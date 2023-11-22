@@ -2,13 +2,30 @@
 
 @section('content')
 
-
 @php
 $orders=App\Models\Order::orderBy('id', 'DESC')->get()->take(10); 
 $totalOrders=App\Models\Order::orderBy('id', 'DESC')->count(); 
 $pendingOrders=App\Models\Order::where('delivery_status', 'pending')->count(); 
 $members=App\Models\User::where('type','==', 0)->count(); 
 $products=App\Models\Product::count(); 
+
+
+$months=array();
+$count=0;
+
+while ($count <=3) {
+ $months[]=date('M Y', strtotime("-".$count."month"));
+  $count++;
+}
+
+
+
+  $dataPoints = array(
+	array("y" => $ordercountData[3], "label" =>$months[3]),
+	array("y" => $ordercountData[2], "label" =>$months[2]),
+	array("y" => $ordercountData[1], "label" =>$months[1]),
+	array("y" => $ordercountData[0], "label" =>$months[0]),
+);
 @endphp
 
 
@@ -76,7 +93,31 @@ $products=App\Models\Product::count();
     </div>
     <!-- /.row -->
 
- 
+ <div class="row">
+  <div class="col-md-12">
+    <!-- LINE CHART -->
+    <div class="card card-info">
+      <div class="card-header">
+        <h3 class="card-title">Orders Graph</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button type="button" class="btn btn-tool" data-card-widget="remove">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="chart">
+          <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        </div>
+      </div>
+      <!-- /.card-body -->
+  </div>
+ </div>
+ </div>
 
 @isset($orders)
 
@@ -152,11 +193,28 @@ $products=App\Models\Product::count();
 
 @section('script')
 <!-- jQuery Mapael -->
-<script src="{{asset('backend/plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
-<script src="{{asset('backend/plugins/raphael/raphael.min.js')}}"></script>
-<script src="{{asset('backend/plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
-{{-- <script src="{{asset('plugins/jquery-mapael/maps/usa_states.min.js')}}"></script> --}}
-<!-- ChartJS -->
-<script src="{{asset('backend/plugins/chart.js/Chart.min.js')}}"></script>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+<script>
+ window.onload = function () {
+ 
+ var chart = new CanvasJS.Chart("chartContainer", {
+   title: {
+     text: "Orders"
+   },
+   axisY: {
+     title: "Number of Orders"
+   },
+   data: [{
+     type: "line",
+     dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+   }]
+ });
+ chart.render();
+  
+ }
+  </script>
+
+
 
 @endsection

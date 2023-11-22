@@ -18,11 +18,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
 <!-- font awsome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/owl.theme.default.min.css')}}">
 <!-- custom css -->
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
-<link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/style.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/responsive.css')}}">
 
 @yield('style')
     </head>
@@ -45,14 +45,14 @@
            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
                 
            <!-- jquery -->
-           <script src="{{asset('js/jquery-3.7.1.min.js')}}"></script>
+           <script src="{{asset('public/js/jquery-3.7.1.min.js')}}"></script>
             <!-- sweet alert -->
            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
            <!-- owl carosuel -->
-           <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+           <script src="{{asset('public/js/owl.carousel.min.js')}}"></script>
            <!-- custom javacript -->
-            <script src="{{asset('js/main.js')}}"></script>
-            <script src="{{asset('js/cartScript.js')}}"></script>
+            <script src="{{asset('public/js/main.js')}}"></script>
+            <script src="{{asset('public/js/cartScript.js')}}"></script>
             <script>
               $.ajaxSetup({
                 headers: {

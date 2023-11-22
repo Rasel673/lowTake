@@ -42,7 +42,7 @@
                                 <?php $dash=''; ?>
                                 <td>{{$_SESSION['i']}}</td>
                                 <td>{{$product->name}}</td>
-                                <td><img src="{{asset('images/'.$product->thumbnail)}}" alt="" width="100" height="100"></td>
+                                <td><img src="{{asset('public/images/'.$product->thumbnail)}}" alt="" width="100" height="100"></td>
                                  <td>{{$product->category->name}}</td>
                                  <td>{{$product->price}}</td>
                                  <td>{{$product->quantity}}</td>

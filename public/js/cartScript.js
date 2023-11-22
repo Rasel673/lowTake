@@ -32,20 +32,19 @@ $(document).ready(function() {
 	// change url before upload---------
 $('.addToCart').click(function(e){
 	e.preventDefault();
-	var base_url='http://127.0.0.1:8000';
 	var Url=$(this).attr('href');
 	var sel = $('#carts_products');
-
 	$.ajax({
 		url: Url,
 		method: "GET",
 		success: function (data) {
 			sel.html('');
 			var quantity=0;
-			$.each(data, function(key, value) {   
+			$.each(data, function(key, value) { 
+				var imageUrl='http://localhost/lowtake/public/images/'+value['image'];
 				   sel.append(`
 				   <tr id="${value['id']}">
-						<td> <img src="${base_url}/images/${value['image']}"  height="50" width="80"/></td>
+						<td> <img src="${imageUrl}"  height="50" width="80"/></td>
 							  <td class="text-center">${value['name']}</td>
 							  <td>${value['quantity']}</td>
 							  <td>৳ ${value['price']}</td>

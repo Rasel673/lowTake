@@ -32,7 +32,7 @@
                         @enderror
                     </div>
 
-                    <img id="preview-banner_1-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_1)}}"
+                    <img id="preview-banner_1-before-upload" class="float-end" src="{{asset('public/images/'.$setting->banner_1)}}"
                     alt="preview banner_1" style="max-height:100px;">
                 </div>
                
@@ -44,7 +44,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-banner_2-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_2)}}"
+                    <img id="preview-banner_2-before-upload" class="float-end" src="{{asset('public/images/'.$setting->banner_2)}}"
                     alt="preview banner_2" style="max-height:100px;">
                 </div>
 
@@ -63,7 +63,7 @@
                         @enderror
                     </div>
 
-                    <img id="preview-banner_3-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_3)}}"
+                    <img id="preview-banner_3-before-upload" class="float-end" src="{{asset('public/images/'.$setting->banner_3)}}"
                     alt="preview banner_3" style="max-height:100px;">
                 </div>
                
@@ -75,7 +75,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-banner_4-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_4)}}"
+                    <img id="preview-banner_4-before-upload" class="float-end" src="{{asset('public/images/'.$setting->banner_4)}}"
                     alt="preview banner_4" style="max-height:100px;">
                 </div>
 
@@ -88,7 +88,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-banner_5-before-upload" class="float-end" src="{{asset('images/'.$setting->banner_5)}}"
+                    <img id="preview-banner_5-before-upload" class="float-end" src="{{asset('public/images/'.$setting->banner_5)}}"
                     alt="preview banner_5" style="max-height:100px;">
                 </div>
 

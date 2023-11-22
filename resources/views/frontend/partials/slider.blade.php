@@ -5,16 +5,17 @@
 
 <div class="clearfix"></div>
 
+
 <!-- slider -->
 @isset( $sliders)
-    
 
     <section id="slider">
 
         <div class="owl-carousel owl-theme">
+           
                 @foreach ($sliders as $slider )
                 <div class="item">
-                   <a href="{{$slider->link}}"><img src="{{asset('images/'.$slider->slider_image)}}" class="img-contain" alt=""></a>
+                   <a href="{{$slider->link}}"><img src="{{asset('public/images/'.$slider->slider_image)}}" class="img-contain" alt=""></a>
                 </div>
                    
                 @endforeach

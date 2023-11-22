@@ -24,7 +24,7 @@
                       <tbody id="carts_products">
                         @foreach(session('cart') as $id => $details)
                         <tr data-id="{{ $details['id'] }}">
-                          <td> <img src="{{asset('images/'.$details['image'])  }}"  height="50" width="80"/></td>
+                          <td> <img src="{{asset('public/images/'.$details['image'])  }}"  height="50" width="80"/></td>
                           <td class="text-center">{{ $details['name'] }}</td>
                           <td>{{ $details['quantity'] }} </td>
                           <td>৳ {{ $details['price'] }}</td>

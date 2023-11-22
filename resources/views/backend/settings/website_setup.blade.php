@@ -40,7 +40,7 @@
                         @enderror
                     </div>
 
-                    <img id="preview-header_Icon-before-upload" class="float-end" src="{{asset('images/'.$setting->header_Icon)}}"
+                    <img id="preview-header_Icon-before-upload" class="float-end" src="{{asset('public/images/'.$setting->header_Icon)}}"
                     alt="preview header_Icon" style="max-height:100px;">
                 </div>
                 <br>
@@ -70,7 +70,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img id="preview-footer_Icon-before-upload" class="float-end" src="{{asset('images/'.$setting->footer_Icon)}}"
+                    <img id="preview-footer_Icon-before-upload" class="float-end" src="{{asset('public/images/'.$setting->footer_Icon)}}"
                     alt="preview footer_Icon" style="max-height:100px;">
                 </div>
    

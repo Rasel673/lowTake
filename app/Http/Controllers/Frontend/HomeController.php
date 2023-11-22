@@ -32,7 +32,6 @@ public function search_product(Request $request){
         $products = Product::select("name as value", "id")
         ->where('name', 'like', '%' . $query . '%')->get();
 
-
         if ($products) {
             $output = '<ul class="dropdown-menu ps-3" style="display:block; z-index:500; position:relative">';
             foreach($products as $product)

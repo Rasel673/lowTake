@@ -11,14 +11,14 @@
         <div class="row pt-3 pb-3">
           <div class="col-4">
             <img src="@isset($setting->footer_Icon)
-            {{asset('images/'.$setting->footer_Icon)}} @endisset" class="footerIcon img-fluid" alt="{{asset('images/footer.png')}}">
+            {{asset('public/images/'.$setting->footer_Icon)}} @endisset" class="footerIcon img-fluid" alt="{{asset('images/footer.png')}}">
             @isset($setting)
             <p>{{$setting->footer_text}}</p>
             @endisset
             
               <div class="services pt-2 d-flex">
-                <img src="{{asset('images/Google Play 1.png')}}" class="playStore img-fluid me-2"  alt="">
-                <img src="{{asset('images/Google Play 2.png')}}"  class="playStore img-fluid" alt="">
+                <img src="{{asset('public/images/Google Play 1.png')}}" class="playStore img-fluid me-2"  alt="">
+                <img src="{{asset('public/images/Google Play 2.png')}}"  class="playStore img-fluid" alt="">
               </div>
     
           </div>
@@ -56,11 +56,11 @@
           <div class="col-2 text-left mt-5">
             <p class="footer_title mt-5">Follow Us</p>
             <ul>
-             <li class="mt-2"><a href="{{$setting->social_fb}}"><img src="{{asset('icons/Facebook  icon.svg')}}" class="me-2 img-fluid" alt="">Facebook</a></li> 
-             <li class="mt-2"> <a href="{{$setting->social_insta}}"><img src="{{asset('icons/Instagram  icon.svg')}}" class="me-2 img-fluid" alt="">Instagram</a></li> 
-             <li class="mt-2"> <a href="{{$setting->social_linkedein}}"><img src="{{asset('icons/Linkedin  icon.svg')}}" class="me-2 img-fluid" alt="">Linkedin</a></li> 
-             <li class="mt-2"> <a href="{{$setting->social_youtube}}"><img src="{{asset('icons/Youtube icon.svg')}}"  class="me-2 img-fluid" alt="">Youtube</a></li> 
-             <li class="mt-2"> <a href="{{$setting->social_tweet}}"><img src="{{asset('icons/Tweeter  icon.svg')}}"  class="me-2 img-fluid"alt="">Tweeter</a></li> 
+             <li class="mt-2"><a href="{{$setting->social_fb}}"><img src="{{asset('public/icons/Facebook  icon.svg')}}" class="me-2 img-fluid" alt="">Facebook</a></li> 
+             <li class="mt-2"> <a href="{{$setting->social_insta}}"><img src="{{asset('public/icons/Instagram  icon.svg')}}" class="me-2 img-fluid" alt="">Instagram</a></li> 
+             <li class="mt-2"> <a href="{{$setting->social_linkedein}}"><img src="{{asset('public/icons/Linkedin  icon.svg')}}" class="me-2 img-fluid" alt="">Linkedin</a></li> 
+             <li class="mt-2"> <a href="{{$setting->social_youtube}}"><img src="{{asset('public/icons/Youtube icon.svg')}}"  class="me-2 img-fluid" alt="">Youtube</a></li> 
+             <li class="mt-2"> <a href="{{$setting->social_tweet}}"><img src="{{asset('public/icons/Tweeter  icon.svg')}}"  class="me-2 img-fluid"alt="">Tweeter</a></li> 
              
             </ul>
           </div>

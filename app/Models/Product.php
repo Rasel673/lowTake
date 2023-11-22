@@ -18,6 +18,7 @@ class Product extends Model
         'slug',
         'thumbnail', 
         'sku',
+        'rating',
         'price',
         'quantity',
         'short_desc',

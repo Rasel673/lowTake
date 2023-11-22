@@ -11,9 +11,9 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-2 col-sm-4 d-flex align-items-center">
-            <a href="JavaScript:void(0)" id="sidebar_show" class="mt-3"><img class="icon img-fluid" src="icons/bar.svg" alt=""></a>
+            <a href="JavaScript:void(0)" id="sidebar_show" class="mt-3"><img class="icon img-fluid" src="{{asset('public/icons/bar.svg')}}" alt=""></a>
               <a class="mx-auto d-block" href="{{url('/')}}"><img class="headerIcon img-fluid mx-auto d-block" src="@isset($setting->header_Icon)
-                {{asset('images/'.$setting->header_Icon)}} @endisset"   alt="{{asset('images/headerIcon.png')}}"></a>
+                {{asset('public/images/'.$setting->header_Icon)}} @endisset"   alt="{{asset('public/images/headerIcon.png')}}"></a>
           </div>
           <div class="col-lg-7 col-sm-8  search d-flex align-items-center">
               <form class="mt-3 w-100">
@@ -27,29 +27,29 @@
               <div class="row d-flex align-items-center">
                   <div class="col-lg-3 col-6 col-sm-6 col-xs-6">
                     <div class="laguage">
-                      <img class="laguageIcon img-fluid pe-1" src="{{asset('icons/laguageIcon.svg')}}" alt=""><b>EN</b>
+                      <img class="laguageIcon img-fluid pe-1" src="{{asset('public/icons/laguageIcon.svg')}}" alt=""><b>EN</b>
                     </div>
                   </div>
                   <div class="col-lg-9 col-6 col-sm-6 col-xs-6 top-nav">
                     <ul class="d-flex justify-content-around align-items-center mt-3">
                       <li class="float-end">
-                          <a class="" aria-current="page" href="JavaScript:void(0)"><img class="icon img-fluid" src="{{asset('icons/bell.svg')}}" alt=""></a>
+                          <a class="" aria-current="page" href="JavaScript:void(0)"><img class="icon img-fluid" src="{{asset('public/icons/bell.svg')}}" alt=""></a>
                       </li>
                       <li class="float-end">
                         <div class="text-center text-white" id="cart_price" data-price="0">
 
                           <span class="bg-success border border-light rounded-circle text-white" id="cart_qty"  data-qty="{{ count((array) session('cart')) }}">{{ count((array) session('cart')) }}</span><br>
-                          <a href="javascript:void(0)" id="cart_show" aria-current="page" href=""><img class="icon img-fluid" src="{{asset('icons/cart.svg')}}" alt=""></a>
+                          <a href="javascript:void(0)" id="cart_show" aria-current="page" href=""><img class="icon img-fluid" src="{{asset('public/icons/cart.svg')}}" alt=""></a>
                           <br>
                 
                         </div>
                       </li>
 
                       <li class="float-end">
-                          <a class="" aria-current="page" href="{{route('login')}}"><img class="icon img-fluid" src="{{asset('icons/person.svg')}}" alt=""></a>
+                          <a class="" aria-current="page" href="{{route('login')}}"><img class="icon img-fluid" src="{{asset('public/icons/person.svg')}}" alt=""></a>
                       </li>
                       <li class="float-end">
-                          <a class="" aria-current="page" href="JavaScript:void(0)"><img class="icon img-fluid" src="{{asset('icons/favorite.svg')}}" alt=""></a>
+                          <a class="" aria-current="page" href="JavaScript:void(0)"><img class="icon img-fluid" src="{{asset('public/icons/favorite.svg')}}" alt=""></a>
                       </li>
                       </ul>
                   </div>

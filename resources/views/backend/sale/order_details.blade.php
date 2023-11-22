@@ -58,7 +58,7 @@
                         <td>{{$item->demand_quantity}}</td>
                         <td>{{$item->product->name}}</td>
                         <td>&#2547;{{$item->product->price}}</td>
-                        <td><img src="{{asset('images/'.$item->product->thumbnail)}}" alt="productImage" width="60" height="50"></td>
+                        <td><img src="{{asset('public/images/'.$item->product->thumbnail)}}" alt="productImage" width="60" height="50"></td>
                         <td>&#2547;{{$item->demand_quantity*$item->product->price}}</td>
                       </tr>
                     @endforeach

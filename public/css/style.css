@@ -249,7 +249,7 @@ display: none;
 /* banner slider */
 
 .item{
-height:10%;
+height:auto;
 color: #000;
 z-index:1;
 }

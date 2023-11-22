@@ -24,7 +24,7 @@
                 <tr data-id="{{ $id }}">
                     <td data-th="Product">
                         <div class="row">
-                            <div class="col-sm-3 hidden-xs"><img src="{{ asset('images/'.$details['image']) }}" width="100" height="100" class="img-responsive"/></div>
+                            <div class="col-sm-3 hidden-xs"><img src="{{ asset('public/images/'.$details['image']) }}" width="100" height="100" class="img-responsive"/></div>
                             <div class="col-sm-9">
                                 <h4 class="nomargin">{{ $details['name'] }}</h4>
                             </div>
@@ -155,11 +155,12 @@
 
     function cartItems(data){
 	var cart=$('#carts_products').html('');
-    var base_url='http://127.0.0.1:8000';
-	$.each(data, function(key, value) {   
+   
+	$.each(data, function(key, value) {
+        var imageUrl='http://localhost/lowtake/public/images/'+value['image'];   
 		cart.append(`
 		   <tr id="${value['id']}">
-				<td> <img src="${base_url}/images/${value['image']}"  height="50" width="80"/></td>
+				<td> <img src="${imageUrl}"  height="50" width="80"/></td>
 					  <td class="text-center">${value['name']}</td>
 					  <td>${value['quantity']}</td>
 					  <td>৳ ${value['price']}</td>

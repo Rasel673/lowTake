@@ -17,7 +17,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
       <div class="book_card">
       <div class="book  product text-center pt-4 pb-4">
-       <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
+       <img  class="book_img"  src="{{asset('public/images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
       <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
       <p class="mb-0">{{$product->short_desc}}</p>
       <div class="d-flex-inline star">

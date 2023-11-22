@@ -8,9 +8,9 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/backend/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('backend//dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/backend//dist/css/adminlte.min.css')}}">
 </head>
 
 <body>
@@ -85,7 +85,7 @@
                         <td>{{$item->demand_quantity}}</td>
                         <td>{{$item->product->name}}</td>
                         <td>&#2547;{{$item->product->price}}</td>
-                        <td><img src="{{asset('images/'.$item->product->thumbnail)}}" alt="productImage" width="60" height="50"></td>
+                        <td><img src="{{asset('public/images/'.$item->product->thumbnail)}}" alt="productImage" width="60" height="50"></td>
                         <td>&#2547;{{$item->demand_quantity*$item->product->price}}</td>
                       </tr>
                     @endforeach

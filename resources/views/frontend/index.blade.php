@@ -25,7 +25,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
       <div class="book_card">
       <div class="book  product text-center pt-4 pb-4">
-       <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block img-contain"  alt="">   
+       <img  class="book_img"  src="{{asset('public/images/'.$product->thumbnail)}}" class="rounded mx-auto d-block img-contain"  alt="">   
       <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
       <p class="mb-0">{{$product->short_desc}}</p>
       <div class="d-flex-inline star">
@@ -54,17 +54,17 @@
             <div class="row justify-content-evenly">
                 <div class="col-6">
                   @if ($HomePage->banner_1!=null)
-                  <img src="{{asset('images/'.$HomePage->banner_1)}}" class="img-fluid rounded" alt="">
+                  <img src="{{asset('public/images/'.$HomePage->banner_1)}}" class="img-fluid rounded" alt="">
                   @else
-                  <img src="{{asset('images/banner_1.png')}}" class="img-fluid rounded" alt="">
+                  <img src="{{asset('public/images/banner_1.png')}}" class="img-fluid rounded" alt="">
                   @endif
                   
                 </div>
                 <div class="col-6">
                   @if ($HomePage->banner_2!=null)
-                  <img src="{{asset('images/'.$HomePage->banner_2)}}" class="img-fluid rounded" alt="">
+                  <img src="{{asset('public/images/'.$HomePage->banner_2)}}" class="img-fluid rounded" alt="">
                   @else
-                  <img src="{{asset('images/banner_1.png')}}" class="img-fluid rounded" alt="">
+                  <img src="{{asset('public/images/banner_1.png')}}" class="img-fluid rounded" alt="">
                   @endif
                 </div>
                 
@@ -89,7 +89,7 @@
       <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
         <div class="book_card">
         <div class="book  product text-center pt-4 pb-4">
-          <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">    
+          <img  class="book_img"  src="{{asset('public/images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">    
         <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
         <p class="mb-0">{{$product->short_desc}}</p>
         <div class="d-flex-inline star">
@@ -133,7 +133,7 @@
            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
              <div class="book_card">
              <div class="book  product text-center pt-4 pb-4">
-              <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
+              <img  class="book_img"  src="{{asset('public/images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
              <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
              <p class="mb-0">{{$product->short_desc}}</p>
              <div class="d-flex-inline star">
@@ -167,26 +167,26 @@
           <div class="row justify-content-evenly">
               <div class="col-4">
                 @if ($HomePage->banner_3!=null)
-                <img src="{{asset('images/'.$HomePage->banner_3)}}" class="img-fluid rounded" alt="">
+                <img src="{{asset('public/images/'.$HomePage->banner_3)}}" class="img-fluid rounded" alt="">
                 @else
-                <img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt="">
+                <img src="{{asset('public/images/banner_2.png')}}" class="img-fluid rounded" alt="">
                 @endif
 
               
               </div>
               <div class="col-4">
                 @if ($HomePage->banner_4!=null)
-                <img src="{{asset('images/'.$HomePage->banner_4)}}" class="img-fluid rounded" alt="">
+                <img src="{{asset('public/images/'.$HomePage->banner_4)}}" class="img-fluid rounded" alt="">
                 @else
-                <img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt="">
+                <img src="{{asset('public/images/banner_2.png')}}" class="img-fluid rounded" alt="">
                 @endif
               </div>
 
               <div class="col-4">
                 @if ($HomePage->banner_5!=null)
-                <img src="{{asset('images/'.$HomePage->banner_5)}}" class="img-fluid rounded" alt="">
+                <img src="{{asset('public/images/'.$HomePage->banner_5)}}" class="img-fluid rounded" alt="">
                 @else
-                <img src="{{asset('images/banner_2.png')}}" class="img-fluid rounded" alt="">
+                <img src="{{asset('public/images/banner_2.png')}}" class="img-fluid rounded" alt="">
                 @endif
                
               </div>
@@ -213,7 +213,7 @@
          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
            <div class="book_card">
            <div class="book  product text-center pt-4 pb-4">
-            <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
+            <img  class="book_img"  src="{{asset('public/images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
            <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
            <p class="mb-0">{{$product->short_desc}}</p>
            <div class="d-flex-inline star">
@@ -256,7 +256,7 @@
               <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
                 <div class="book_card">
                 <div class="book  product text-center pt-4 pb-4">
-                  <img  class="book_img"  src="{{asset('images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
+                  <img  class="book_img"  src="{{asset('public/images/'.$product->thumbnail)}}" class="rounded mx-auto d-block" alt="">   
                 <h5 class="book_title pt-2 p-1">{{$product->name}} </h5>
                 <p class="mb-0">{{$product->short_desc}}</p>
                 <div class="d-flex-inline star">

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Setting;
 use App\Models\Category;
 use App\Models\HomePage;
+use App\Models\Order;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -19,8 +21,28 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('backend.index');
+
+        $current_month_orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->month)->count();
+        $current_before_1_month_orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->subMonth(1))->count();
+        $current_before_2_month_orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->subMonth(2))->count();
+        $current_before_3_month_orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->subMonth(3))->count();
+
+        $ordercountData=[
+            $current_month_orders,
+            $current_before_1_month_orders,
+            $current_before_2_month_orders,
+            $current_before_3_month_orders
+             
+        ];
+
+
+        return view('backend.index',compact('ordercountData'));
     }
+    
+
+
+    
+
     
 
 

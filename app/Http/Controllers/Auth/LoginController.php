@@ -54,9 +54,14 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
+
+       
      
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
+           
+
+           
             if (auth()->user()->type == 1) {
                 return redirect()->route('admin.home');
             }

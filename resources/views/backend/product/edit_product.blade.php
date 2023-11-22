@@ -3,7 +3,7 @@
 
 
 @section('style')
-<link rel="stylesheet" href="{{asset('backend/plugins/summernote/summernote-bs4.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/backend/plugins/summernote/summernote-bs4.min.css')}}">
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -128,7 +128,7 @@
 
 @section('script')
 <!-- Summernote -->
-<script src="{{asset('backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{asset('public/backend/plugins/summernote/summernote-bs4.min.js')}}"></script>
 
 <script type="text/javascript">
       
