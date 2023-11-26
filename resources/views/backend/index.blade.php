@@ -192,9 +192,7 @@ while ($count <=3) {
 @endsection
 
 @section('script')
-<!-- jQuery Mapael -->
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-
 <script>
  window.onload = function () {
  

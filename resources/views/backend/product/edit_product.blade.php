@@ -83,6 +83,14 @@
 
                     <div class="col-sm-6">
                         <div class="form-group">
+                            <label>Product Initial Rating*</label>
+                            <input type="text" name="rating" class="form-control" placeholder="Product Rating" value="{{$product->rating}}"/>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
                             <label>Short Description</label>
                             <textarea class="form-control" name="short_desc" rows="3" placeholder="Enter ...">{{$product->short_desc}}</textarea>
                           </div>
@@ -98,7 +106,7 @@
                               @enderror
                         </div>
 
-                        <img id="preview-image-before-upload" class="float-end" src="{{asset('images/'.$product->thumbnail)}}"
+                        <img id="preview-image-before-upload" class="float-end" src="{{asset('public/images/'.$product->thumbnail)}}"
                         alt="preview image" style="max-height:100px;">
                     </div>
 

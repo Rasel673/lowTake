@@ -54,6 +54,7 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'slug' =>str_replace(" ","_",$request->name),
                 'sku' => $request->sku,
+                'rating' => $request->rating,
                 'price' => $request->price,
                 'thumbnail' => $imageName,
                 'quantity' => $request->quantity,
@@ -123,6 +124,7 @@ class ProductController extends Controller
             $product->name = $request->name;
             $product->slug = $request->slug;
             $product->sku = $request->sku;
+            $product->rating = $request->rating;
             $product->price = $request->price;
             $product->quantity = $request->quantity;
             $product->short_desc = $request->short_desc;

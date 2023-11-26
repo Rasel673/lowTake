@@ -41,9 +41,8 @@
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Select  Discount</label>
-                                    <input type="text" name="discount" placeholder="discount amount" class="form-control" />
-                                     
+                                    <label>Discount</label>
+                                    <input type="text" name="discount" placeholder="discount amount" class="form-control" /> 
                                 </div>
                             </div>
 
@@ -76,6 +75,13 @@
                         <div class="form-group">
                             <label>Product quantity*</label>
                             <input type="text" name="quantity" class="form-control" placeholder="Product quantity" value="{{old('quantity')}}" />
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Product Initial Rating*</label>
+                            <input type="text" name="rating" class="form-control" placeholder="Product Rating" value="{{old('rating')}}" required />
                         </div>
                     </div>
 
