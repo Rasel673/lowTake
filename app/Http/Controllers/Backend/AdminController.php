@@ -28,7 +28,7 @@ class AdminController extends Controller
         $current_before_3_month_orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->subMonth(3))->count();
 
         $ordercountData=[
-            $current_month_orders,
+            $current_month_orders+1,
             $current_before_1_month_orders,
             $current_before_2_month_orders,
             $current_before_3_month_orders

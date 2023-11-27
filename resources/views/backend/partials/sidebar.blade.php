@@ -100,7 +100,7 @@
   <a href="" class="nav-link {{ Request::routeIs('allSales') ? 'active' : '' }}">
     <i class="nav-icon fas fa-tachometer-alt"></i>
     <p>
-      Sales
+      Sale
       <i class="right fas fa-angle-left"></i>
     </p>
   </a>
@@ -109,11 +109,24 @@
     <li class="nav-item">
       <a href="{{route('allSales')}}" class="nav-link  {{ Request::routeIs('allSales') ? 'active' : '' }}">
         <i class="far fa-circle nav-icon"></i>
-        <p>Sale list</p>
+        <p>Order list</p>
       </a>
     </li>
    
   </ul>
+</li>
+
+
+
+<!-- Report  route -->
+<li class="nav-item menu-open">
+  <a href="{{route('admin.report')}}" class="nav-link {{ Request::routeIs('admin.report') ? 'active' : '' }}">
+    <i class="nav-icon fas fa-tachometer-alt"></i>
+    <p>
+      Report
+      
+    </p>
+  </a>
 </li>
 
 

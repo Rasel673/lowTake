@@ -78,9 +78,10 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('coupon/delete/{id}', [CouponController::class, 'deleteCuopon'])->name('deleteCuopon');  
 
 
-   // Report  route-----------------
-   Route::get('report',[ReportController::class,'report'])->name('admin.report');
-
+    // Report  route-----------------
+     Route::get('report',[ReportController::class,'report'])->name('admin.report');
+    //filter report----------------    
+    Route::any('filter_report/{type}', [ReportController::class, 'filter_report'])->name('filter_report');
 
     // website setup route-------=============================---------
     Route::any('/website_settings',[AdminController::class,'website_setup'])->name('website_setup');
