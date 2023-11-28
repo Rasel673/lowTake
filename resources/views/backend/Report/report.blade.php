@@ -17,7 +17,7 @@
         <div class="card">
             <div class="card-header border-transparent">
               <div class="col-md-6 float-left">
-                <form action="" class="d-flex" method="GET">
+                <form action="{{route('filter_report','custom')}}" class="d-flex" method="GET">
                     <div>
                         <label>Start Date</label>
                         <input type="date" class="form-control" name="start_date" required/>
@@ -33,13 +33,16 @@
                         <p></p>
                         <button class="btn btn-primary btn-sm ml-1"  type="submit"><b>submit</b></button>
                     </div>
-                    
                 </form>
             </div>
 
               <div class="card-tools">
 
-
+                <a href="{{route('filter_report','today')}}" class="btn btn-sm btn-primary">Today</a>
+                <a href="{{route('filter_report','previous_day')}}" class="btn btn-sm btn-primary">Previous Day</a>
+                <a href="{{route('filter_report','current_month')}}" class="btn btn-sm btn-primary">This Month</a>
+                <a href="{{route('filter_report','previous_month')}}" class="btn btn-sm btn-primary">Previous Month</a>
+                <a href="{{route('filter_report','current_year')}}" class="btn btn-sm btn-primary">Current Year</a>
 
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                   <i class="fas fa-minus"></i>

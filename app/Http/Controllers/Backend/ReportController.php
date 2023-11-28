@@ -22,35 +22,35 @@ class ReportController extends Controller
 
     public function filter_report(Request $request,$type){
 
-        if($type='today'){
+      
+       
+
+        if($type=='today'){
             $orders=Order::whereDate('created_at', '=', Carbon::today()->toDateString())->get();
+           
         }
 
-        if($type='previous_day'){
+        if($type=='previous_day'){
             $orders=Order::whereDate('created_at',Carbon::yesterday())->get();
         }
 
-        if($type='current_month'){
+        if($type=='current_month'){
         $orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->month)->get();
         }
 
-        if($type='previous_month'){
+        if($type=='previous_month'){
             $orders=Order::whereYear('created_at',Carbon::now()->year)->whereMonth('created_at',Carbon::now()->subMonth(1))->get();
         }
 
-        if($type='current_year'){
+        if($type=='current_year'){
             $orders=Order::whereYear('created_at',Carbon::now()->year)->get();
         }
 
 
-        if($type='custom'){
-
+        if($type=='custom'){
             $startDate =$request->start_date; // Start 
             $endDate =$request->end_date; // End 
-
-            $orders= DB::table('orders')
-            ->whereBetween('created_at', [$startDate, $endDate])
-            ->get();
+            $orders= Order::whereBetween('created_at', [$startDate, $endDate]) ->get();
         }
 
         return view('backend.Report.report',compact('orders'));
