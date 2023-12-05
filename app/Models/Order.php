@@ -21,6 +21,7 @@ class Order extends Model
         'delivery_status',
         'order_amount',
         'order_quantity',
+        'transaction_no',
         'order_date',
         'shipping_address',
        

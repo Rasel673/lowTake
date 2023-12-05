@@ -67,12 +67,12 @@
                       <a href="{{route('orderDetails',$order->id)}}" class="btn btn-primary">view</a>
                       <a href="#" class="btn btn-warning">Edit</a>
                       @if ($order->payment_status=='due')
-                      <a href="{{ route('chang_status', ['type' => 'payment_status', 'id' =>$order->id]) }}" class="btn btn-info">Paid</a>
+                      <a href="{{ route('chang_status', ['type' => 'payment_status', 'id' =>$order->id]) }}" onclick="return confirm('Are you sure you want to change status?')" class="btn btn-info">Paid</a>
                       @endif
                       @if ($order->delivery_status=='pending')
-                      <a href="{{ route('chang_status', ['type' => 'delivery_status', 'id' =>$order->id]) }}" class="btn btn-success">Delivered</a>
+                      <a href="{{ route('chang_status', ['type' => 'delivery_status', 'id' =>$order->id]) }}" onclick="return confirm('Are you sure you want to change status?')" class="btn btn-success">Delivered</a>
                       @endif
-                      <a href="{{ route('chang_status', ['type' => 'cencel', 'id' =>$order->id]) }}" onclick="alert('are you sure?')" class="btn btn-danger">Cancel</a>
+                      <a href="{{ route('chang_status', ['type' => 'cencel', 'id' =>$order->id]) }}" onclick="return confirm('Are you sure you want to delete order?')" class="btn btn-danger">Cancel</a>
                     </td>
                   </tr>
                   @endforeach

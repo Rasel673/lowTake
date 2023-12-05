@@ -20,6 +20,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="{{asset('public/css/owl.carousel.min.css')}}">
 <link rel="stylesheet" href="{{asset('public/css/owl.theme.default.min.css')}}">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <!-- custom css -->
 <link rel="stylesheet" href="{{asset('public/css/style.css')}}">
 <link rel="stylesheet" href="{{asset('public/css/responsive.css')}}">
@@ -46,6 +48,13 @@
                 
            <!-- jquery -->
            <script src="{{asset('public/js/jquery-3.7.1.min.js')}}"></script>
+
+           
+         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+       
+
             <!-- sweet alert -->
            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
            <!-- owl carosuel -->
@@ -82,6 +91,58 @@
                 });
               
             </script>
+
+<script>
+    $( function() {
+
+    //     var availableTags = [
+    //   "ActionScript",
+    //   "AppleScript",
+    //   "Asp",
+    //   "BASIC",
+    //   "C",
+    //   "C++",
+    //   "Clojure",
+    //   "COBOL",
+    //   "ColdFusion",
+    //   "Erlang",
+    //   "Fortran",
+    //   "Groovy",
+    //   "Haskell",
+    //   "Java",
+    //   "JavaScript",
+    //   "Lisp",
+    //   "Perl",
+    //   "PHP",
+    //   "Python",
+    //   "Ruby",
+    //   "Scala",
+    //   "Scheme"
+    // ];
+    // $( "#search" ).autocomplete({
+    //   source: availableTags
+    // });
+
+      var availableTags = [];
+      $.ajax({
+              url:"{{ route('home.products.search') }}",
+              method:'GET',
+              success:function(data){
+                availableTags=data;
+              startAutocomplete(data);
+              console.log(data);
+              }
+          });
+  
+        function startAutocomplete(availableTags){
+            $( "#search" ).autocomplete({
+            source: availableTags
+      });   
+     };  
+    
+    } );
+    </script>
+
             @yield('script')
     </body>
 </html>

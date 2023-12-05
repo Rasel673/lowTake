@@ -22,6 +22,7 @@ return new class extends Migration
             $table->double('order_amount')->default(0.00);
             $table->integer('order_quantity')->default(0);
             $table->string('order_date');
+            $table->string('transaction_no');
             $table->longText('shipping_address')->nullable();
             $table->softDeletes();
             $table->timestamps();

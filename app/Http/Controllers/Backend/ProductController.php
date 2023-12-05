@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\OrderDetails;
 use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
@@ -60,6 +61,13 @@ class ProductController extends Controller
                 'quantity' => $request->quantity,
                 'short_desc' => $request->short_desc,
                 'long_desc' => $request->long_desc,
+
+                'popular' => $request->popular,
+                'islamic' => $request->islamic,
+                'children' => $request->children,
+                'novels' => $request->novels,
+
+
                 'meta_title' => $request->name,
                 'meta_description' => $request->short_desc,
             ]);
@@ -129,6 +137,11 @@ class ProductController extends Controller
             $product->quantity = $request->quantity;
             $product->short_desc = $request->short_desc;
             $product->long_desc = $request->long_desc;
+            $product->popular = $request->popular;
+            $product->islamic = $request->islamic;
+            $product->children = $request->children;
+            $product->novels = $request->novels;
+
             $product->update();
             return redirect()->back()->with('success', 'Product has been updated successfully.');
             
@@ -147,6 +160,11 @@ public function viewProduct($id){
     public function deleteProduct($id)
 {
     $product = Product::findOrFail($id);
+
+    $checkOrderExist=OrderDetails::where('product_id',$id)->count();
+    if($checkOrderExist>0){
+        return redirect()->back()->with('error', 'Product used in Order.');
+    }
 
     $path = public_path().'/images/';
     if($product->thumbnail != ''  && $product->thumbnail != null){

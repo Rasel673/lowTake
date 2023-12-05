@@ -25,15 +25,12 @@ use App\Http\Controllers\Frontend\{
 Route::get('/',[HomeController::class, 'index'] );
 
 
-
-
-
-
-
 // search product--------------
-Route::post('/products/search', [HomeController::class,'search_product'])->name('home.products.search');
+Route::get('/products/search', [HomeController::class,'search_product'])->name('home.products.search');
 
 Route::get('category_products/{id}', [HomeController::class,'category_product'])->name('category_product');
+
+Route::get('type_products/{type}', [HomeController::class,'bookTypes'])->name('bookTypes');
 
 
 // cart route----------
@@ -41,10 +38,6 @@ Route::get('cart', [CartController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
-
-
-
-
 
 
 
@@ -83,8 +76,19 @@ Route::get('/clear', function()
     Artisan::call('view:clear');
     Artisan::call('config:clear');
     Artisan::call('optimize');
+    Artisan::call('optimize:clear');
    
     return "cleared";
+});
+
+
+Route::get('/routecheck', function()
+{
+  
+    Artisan::call('optimize');
+    Artisan::call('optimize:clear');
+   
+    return "checked";
 });
 
 

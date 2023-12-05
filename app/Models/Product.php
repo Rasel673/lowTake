@@ -23,8 +23,13 @@ class Product extends Model
         'quantity',
         'short_desc',
         'long_desc',
+        'popular',
+        'islamic',
+        'children',
+        'novels',
         'meta_title',
         'meta_description',
+       
        
     ];
 

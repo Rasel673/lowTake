@@ -25,31 +25,43 @@ public function home(){
 
 public function search_product(Request $request){
 
-    if ($request->ajax()) {
-        $output = '';
-        $query = $request->get('query');
+    $products = Product::select('name')
+        ->where('quantity', '>' ,'0')->get();
 
-        $products = Product::select("name as value", "id")
-        ->where('name', 'like', '%' . $query . '%')->get();
+        $data=[];
 
-        if ($products) {
-            $output = '<ul class="dropdown-menu ps-3" style="display:block; z-index:500; position:relative">';
-            foreach($products as $product)
-            {
-             $output .= '
-             <li><a href="#" style="text-decoration:none; display:block; color:black;">'.$product->value.'</a></li>
-             ';
-            }
-            $output .= '</ul>';
+        foreach ($products as $item){
+            $data[]=$item['name'];
 
-            echo $output;
-           
         }
-    }
+
+        return $data;
+
+
+    // if ($request->ajax()) {
+    //     $output = '';
+    //     $query = $request->get('query');
+
+    //     $products = Product::select("name as value", "id")
+    //     ->where('name', 'like', '%' . $query . '%')->get();
+
+    //     if ($products) {
+    //         $output = '<ul class="dropdown-menu ps-3" style="display:block; z-index:500; position:relative">';
+    //         foreach($products as $product)
+    //         {
+    //          $output .= '
+    //          <li><a href="#" style="text-decoration:none; display:block; color:black;">'.$product->value.'</a></li>
+    //          ';
+    //         }
+    //         $output .= '</ul>';
+
+    //         echo $output;
+           
+    //     }
+    // }
 
 
 }
-
 
 
 
@@ -59,6 +71,16 @@ public function category_product($cat_id){
     $products=Product::where('category_id',$cat_id)
     ->get();
     return view('frontend.categorywise_product',compact('products','category'));
+
+}
+
+
+public function bookTypes($type){
+
+    $products=Product::where($type,'1')
+    ->get();
+
+    return view('frontend.typewise_product',compact('products','type'));
 
 }
 

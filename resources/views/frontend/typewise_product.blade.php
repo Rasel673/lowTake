@@ -8,11 +8,9 @@
  <!-- New book section -->
 <section class="books ms-3 me-3 vh-100">
 <div class="container-fluid">
- <div class="row pb-5 pt-5">
-  <h3 class="title">{{$category->name}}</h3>  
- </div>
+ 
 
- <div class="row pb-5 ">
+ <div class="row pb-5">
     @foreach ($products as $product)
     <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2  p-2">
       <div class="book_card">

@@ -125,7 +125,7 @@
   </aside>
   <!-- /.control-sidebar -->
 
-  <!-- Main Footer -->
+  <!-- 
   <footer class="main-footer">
     <strong>Copyright &copy; 2023 <a href="">Sarkar It</a>.</strong>
     All rights reserved.
@@ -133,6 +133,7 @@
       <b>Version</b> 1.0.0
     </div>
   </footer>
+  Main Footer -->
 </div>
 <!-- ./wrapper -->
 

@@ -16,11 +16,11 @@
                 {{asset('public/images/'.$setting->header_Icon)}} @endisset"   alt="{{asset('public/images/headerIcon.png')}}"></a>
           </div>
           <div class="col-lg-7 col-sm-8  search d-flex align-items-center">
-              <form class="mt-3 w-100">
+              <form class="mt-3 w-100 ui-widget">
                 @csrf
                   <i class="fa-solid fa-magnifying-glass"></i>
-                  <input class="form-control rounded" id="search" type="search" placeholder="Search" aria-label="Search">
-                  <div class="" id="products-list"></div>
+                  <input class="form-control rounded " id="search" type="search" placeholder="Search" aria-label="Search">
+                  {{-- <div class="" id="products-list"></div> --}}
                 </form>
           </div>
           <div class="col-lg-3">
@@ -98,8 +98,13 @@ navbar.classList.remove("sticky");
 
 </script>
 
-<script>
+
+
+
+
+{{-- <script>
   $(document).ready(function(){
+
       $('#search').on('keyup', function(){
           var query = $(this).val();
           $.ajax({
@@ -137,5 +142,5 @@ if((inputvalue!='')){
   
     
     
-</script>
+</script> --}}
  @endsection

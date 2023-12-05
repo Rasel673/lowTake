@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
             $table->string('discount')->nullable();
             $table->string('name');
             $table->string('slug')->nullable();
@@ -24,6 +28,10 @@ return new class extends Migration
             $table->integer('quantity')->default(0);
             $table->string('short_desc');
             $table->longText('long_desc')->nullable();
+            $table->integer('popular')->nullable();
+            $table->integer('islamic')->nullable();
+            $table->integer('children')->nullable();
+            $table->integer('novels')->nullable();
             $table->string('meta_title')->nullable();
             $table->longText('meta_description')->nullable();
             $table->softDeletes();

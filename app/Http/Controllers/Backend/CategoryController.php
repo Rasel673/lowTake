@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
@@ -98,6 +99,13 @@ public function editCategory($id, Request $request)
     public function deleteCategory($id)
 {
     $category = Category::findOrFail($id);
+
+    $productExist=Product::where('category_id',$id)->count();
+
+    if($productExist>0){
+        return redirect()->back()->with('error', 'Category already in product table');
+    }
+
     if(count($category->subcategory))
     {
         $subcategories = $category->subcategory;

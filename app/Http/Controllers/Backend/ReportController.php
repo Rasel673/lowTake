@@ -22,9 +22,6 @@ class ReportController extends Controller
 
     public function filter_report(Request $request,$type){
 
-      
-       
-
         if($type=='today'){
             $orders=Order::whereDate('created_at', '=', Carbon::today()->toDateString())->get();
            
